@@ -7,29 +7,28 @@ import styles from "../styles";
 const InsightCard = ({ index, imgUrl, title, subtitle }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 1)}
-    className="lg:flex mb-[32px] lg:mb-0"
+    className="flex flex-col gap-4 md:flex-row"
   >
-    <div className="rounded-[24px] w-full h-[300px] sm:h-[200px] lg:w-[270px] lg:h-[270px] md:flex-none">
-      <img
-        src={imgUrl}
-        alt="insight"
-        className="object-cover w-full h-full rounded-[24px]"
-      />
-    </div>
-    <div className="lg:ml-[64px] lg:flex lg:justify-between lg:gap-[90px] lg:items-center">
-      <div>
-        <h2 className="font-normal text-center lg:text-left mt-[24px] lg:mt-[24px] mb-[24px] text-[30px] lg:text-[42px] leading-[1] lg:leading-[1.25] lg:mb-[16px] text-white">
+    <img
+      src={imgUrl}
+      alt="insight"
+      className="md:w-[270px] rounded-[32px] h-[250px] object-cover w-full"
+    />
+
+    <div className="flex items-center justify-between w-full ">
+      <div className="flex-1 md:ml-[62px] flex flex-col max-w-[650px]">
+        <h4 className="font-normal lg:text-[42px] text-[26px] text-white">
           {title}
-        </h2>
-        <p className="font-normal text-center lg:text-left text-[16px] mb-[24px] lg:text-[20px] opacity-[0.4] text-white leading-[2]">
+        </h4>
+        <p className="mt-[16px] text-secondary-white font-normal lg:text-[20px] text-[14px]">
           {subtitle}
         </p>
       </div>
-      <button className="border-[2px] rounded-full mx-auto border-white lg:flex-none lg:p-0 w-[100px] h-[100px]  flex justify-center items-center ">
+      <button className="items-center hidden lg:flex justify-center w-[100px] h-[100px] rounded-full bg-transparent border-[2px] border-white">
         <img
-          src="/top-right-arrow.svg"
-          alt="top-right-arrow"
-          className="object-contain"
+          src="/arrow.svg"
+          alt="arrow"
+          className="object-contain w-[40%] h-[40%]"
         />
       </button>
     </div>
